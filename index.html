@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Cosméticos</title>
+    <style>
+        /* Remove default margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set body and HTML to full screen */
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Position the video to cover the background */
+        #webcam-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(60%) contrast(80%) saturate(150%);
+        }
+
+        /* Header styling */
+        header {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: rgba(255, 182, 193, 0.9);
+            color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 1.2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content styling */
+        .content {
+            position: relative;
+            z-index: 1;
+            color: #ffe0e9;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 182, 193, 0.9);
+            color: white;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h2>Loja de Cosméticos</h2>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Produtos</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Video element for webcam -->
+    <video id="webcam-video" autoplay muted playsinline></video>
+
+    <!-- Foreground content -->
+    <div class="content">
+        <h1>Bem-vindo à Loja de Cosméticos</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula ligula a lorem interdum, quis tristique mauris interdum. Sed sit amet nisi nec odio consequat aliquet.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Loja de Cosméticos. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        async function startWebcamBackground() {
+            try {
+                // Access webcam
+                const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
+                const videoElement = document.getElementById('webcam-video');
+                videoElement.srcObject = stream;
+            } catch (error) {
+                console.error('Error accessing the webcam:', error);
+                alert('Unable to access your webcam. Please allow camera permissions.');
+            }
+        }
+
+        // Start the webcam background when the page loads
+        window.onload = startWebcamBackground;
+    </script>
+</body>
+</html>
+
