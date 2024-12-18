@@ -16,7 +16,6 @@
         html, body {
             height: 100%;
             width: 100%;
-            overflow: hidden;
             font-family: 'Arial', sans-serif;
         }
 
@@ -67,6 +66,7 @@
             color: #ffe0e9;
             text-align: center;
             margin-top: 5rem;
+            height: 100vh;
         }
 
         h1 {
@@ -83,9 +83,69 @@
             line-height: 1.6;
         }
 
+        .product-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            z-index: 1;
+            
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 1rem;
+            text-align: center;
+            height: 480px;
+            align-content: flex-end;
+            opacity: 95%;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            border-radius: 8px;
+            max-height: 8rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            color: #555;
+            margin: 0.5rem 0;
+        }
+
+        .product-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 182, 193, 0.9);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .product-card a:hover {
+            background: rgba(255, 105, 135, 0.9);
+        }
+
+        .product-card .availability {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
         /* Footer */
         footer {
-            position: absolute;
             bottom: 0;
             width: 100%;
             text-align: center;
@@ -118,6 +178,52 @@
         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi.</p>
     </div>
 
+    <!-- Product Cards -->
+    <div class="product-cards">
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/51CKOQ+eEsL._AC_SX522_.jpg" alt="Maybelline NY Pó compacto">
+            <h3>Maybelline NY Pó compacto Efeito Mate e Poros Invisíveis Fit Me Médio Claro Bege B03</h3>
+            <p>Preço: R$55,39</p>
+            <a href="https://amzn.to/4gzWS9n" target="_blank">Comprar</a>
+            <p class="availability">Oferta sujeita à disponibilidade de estoque</p>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61uVHrMDuZL._AC_SY550_.jpg" alt="Payot Batom Hidratante">
+            <h3>Payot Batom Hidratante Payot Rosa Chá</h3>
+            <p>Preço: R$40,41</p>
+            <a href="https://amzn.to/41GWtgI" target="_blank">Comprar</a>
+            <p class="availability">Oferta sujeita à disponibilidade de estoque</p>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/51kIpAJFYHL._AC_SY550_.jpg" alt="Payot Corretivo">
+            <h3>Payot Corretivo Payot Serum Retinol 10</h3>
+            <p>Preço: R$37,99</p>
+            <a href="https://amzn.to/4ghaC8P" target="_blank">Comprar</a>
+            <p class="availability">Oferta sujeita à disponibilidade de estoque</p>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/51AiFdaBufL._AC_.jpg" alt="Océane Paleta de Sombras">
+            <h3>Océane Paleta de Sombras Nádia Tambasco By Océane - To Go Matte 7,2g</h3>
+            <p>Preço: R$35,90</p>
+            <a href="https://amzn.to/3ZEEDIt" target="_blank">Comprar</a>
+            <p class="availability">Oferta sujeita à disponibilidade de estoque</p>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61RYeEW9AML._AC_SX522_.jpg" alt="Océane Blush">
+            <h3>Océane Oceane Blush Cintilante - Glossy Blush Océane Edition 7,3G</h3>
+            <p>Preço: R$47,29</p>
+            <a href="https://amzn.to/3P5RmyM" target="_blank">Comprar</a>
+            <p class="availability">Oferta sujeita à disponibilidade de estoque</p>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61FwcbVUyFL._AC_SX522_.jpg" alt="Maybelline NY Base">
+            <h3>Maybelline NY Base Alta Cobertura Super Stay Active Wear Resistente ao Suor Alta Duração até 30h na Pele, Cor 120 Classic Ivory, 30ml</h3>
+            <p>Preço: R$55,49</p>
+            <a href="https://amzn.to/41zyIqJ" target="_blank">Comprar</a>
+            <p class="availability">Oferta sujeita à disponibilidade de estoque</p>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Loja de Cosméticos. Todos os direitos reservados.</p>
@@ -141,4 +247,3 @@
     </script>
 </body>
 </html>
-
