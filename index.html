@@ -29,7 +29,16 @@
             object-fit: cover;
             z-index: -1;
             filter: brightness(60%) contrast(80%) saturate(150%);
+            background-image: 'espelho.png';
         }
+
+        .video-container {
+            position: fixed;
+            display: inline-block;
+          }
+          .overlay-image {
+            width: 100vw;
+          }
 
         /* Header styling */
         header {
@@ -169,12 +178,14 @@
     </header>
 
     <!-- Video element for webcam -->
-    <video id="webcam-video" autoplay muted playsinline></video>
+    <div class="video-container">
+        <video id="webcam-video" autoplay muted playsinline></video>
+        <img src="espelho.png" alt="Overlay" class="overlay-image">
+    </div>
 
     <!-- Foreground content -->
     <div class="content">
         <h1>Bem-vindo à Loja de Cosméticos</h1>
-        <p>Sim, os produtos são reais.</p>
     </div>
 
     <!-- Product Cards -->
